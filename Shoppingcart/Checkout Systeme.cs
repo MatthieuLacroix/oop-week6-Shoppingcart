@@ -9,30 +9,30 @@ namespace Shoppingcart
 {
     class Checkout_Systeme
     {
-        public ArrayList products { get; set; }
+        public List<Product> products { get; set; }
         public static double number_product { get; set; }
         public void Total_Price()
         {
-            foreach(ArrayList element in products)
+            foreach(Product element in products)
             {
                 number_product=number_product+element.price;
             }
         }
-        public void Add_Apple(Apple apple)
+        public void Add_Product(Product product)
         {
-            products.Add(apple);
-        }
-        public void Add_Orange(Orange orange)
-        {
-            products.Add(orange);
+            products.Add(product);
         }
     }
-    class Apple
+    class Product
     {
-        public static double price = 0.6;
-    }
-    class Orange
-    {
-        public static double price = 25;
+        public static double apple_price = 0.6;
+        public static double orange_price = 0.25;
+        public string name { get; set; }
+        public double price { get; set; }
+        public void Give_Prive()
+        {
+            if (name == "apple") price = apple_price;
+            else price = orange_price;
+        }
     }
 }
