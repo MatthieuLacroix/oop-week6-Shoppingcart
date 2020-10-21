@@ -18,17 +18,21 @@ namespace Shoppingcart
                 number_product=number_product+element.price;
             }
         }
-        public void Add_Apple()
+        public void Add_Apple(Apple apple)
         {
-            products.Add()
+            products.Add(apple);
+        }
+        public void Add_Orange(Orange orange)
+        {
+            products.Add(orange);
         }
     }
     class Apple
     {
-        static int price { get; set; }
+        public static double price = 0.6;
     }
     class Orange
     {
-        static int price { get; set; }
+        public static double price = 25;
     }
 }
